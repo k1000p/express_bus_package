@@ -27,3 +27,16 @@ Route::any("mensaje", [
 ]);
 
 Route::get('nombre/{nombre}','EjemploControlador@MostrarNombreAction');
+
+Route::get('registro', function(){
+		echo Form::open(array('url' => 'nombre', 'method' => 'post'));
+		echo Form::label('nombre', 'Tu nombre:  ');
+		echo Form::text('nom');
+		echo Form::submit('Enviar');
+		echo Form::close();
+});
+
+Route::post('nombre', function(){
+		$nombre = Input::get('nom');
+		return 'Tu nombre es:  '.$nombre;
+});
