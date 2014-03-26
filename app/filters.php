@@ -79,10 +79,11 @@ Route::filter('csrf', function()
 	}
 });
 
-Route::filter('fecha', function()
+// Filtro de ejemplo
+Route::filter('cumple', function()
 {
-	if (date('d/m') == '12/03') {
-		return 'la fecha coincide'.'/br';
+	if (date('d/m') == '25/03') {
+		return 'la fecha coincide';
 
 	}
 });
