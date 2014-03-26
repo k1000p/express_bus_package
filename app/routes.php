@@ -16,8 +16,13 @@ Route::get('/', function()
 	return View::make('hello');
 });*/
 
+Route::get('/', array('before' => 'cumple',
+		function(){
+		return View::make('hello');
+	}
+));
 
-Route::get('/', 'EjemploControlador@MostrarIndexAction');
+//Route::get('/', 'EjemploControlador@MostrarIndexAction');
 
 //Route::get('mensaje', 'EjemploControlador@MostrarMensaje');
 
