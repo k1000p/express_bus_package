@@ -16,22 +16,32 @@ Route::get('/', function()
 	return View::make('hello');
 });*/
 
-Route::get('/', array('before' => 'cumple',
+/*Route::get('/', array('before' => 'cumple',
 		function(){
 		return View::make('hello');
 	}
-));
+)); */
 
-//Route::get('/', 'EjemploControlador@MostrarIndexAction');
-
+//Route::get('/', 'EjemploController@mostrarIndexAction');
+Route::get('/', [
+		'as'=> 'Ejemplo/mostrarIndex',
+		'uses' => 'EjemploController@mostrarIndexAction'
+]);
 //Route::get('mensaje', 'EjemploControlador@MostrarMensaje');
 
-Route::any("mensaje", [
-  		"as" => "ejemplo/mostrarMensaje",
-		"uses" => "EjemploControlador@MostrarMensajeAction"
+Route::any('mensaje', [
+  		'as' => 'Ejemplo/mostrarMensaje',
+		'uses' => 'EjemploController@mostrarMensajeAction'
 ]);
 
-Route::get('nombre/{nombre}','EjemploControlador@MostrarNombreAction');
+Route::get('nombre/{nombre}', [
+		'as' => 'Ejemplo/mostrarNombre',
+		'uses' => 'EjemploController@MostrarNombreAction'
+	]);
+
+
+
+//Route::get('nombre/{nombre}','EjemploControlador@MostrarNombreAction');
 
 Route::get('registro', function(){
 		echo Form::open(array('url' => 'nombre', 'method' => 'post'));
