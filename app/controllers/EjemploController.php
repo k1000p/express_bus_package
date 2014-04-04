@@ -8,7 +8,7 @@ class EjemploController extends BaseController
 
 	function mostrarIndexAction()
 	{
-		return View::make('hello');
+		return View::make('login');
 	}
 
 	function mostrarMensajeAction()
@@ -21,5 +21,10 @@ class EjemploController extends BaseController
 		//return 'esta es una prueba de: '.$nombre;
 		//return View::make('nombre');
 		return View::make('nombre')->with('nombre', $nombre);
+	}
+
+	function mostrarPlantillaHolaAction()
+	{
+		return View::make('hola');
 	}
 }

@@ -27,12 +27,22 @@ Route::get('/', [
 		'as'=> 'Ejemplo/mostrarIndex',
 		'uses' => 'EjemploController@mostrarIndexAction'
 ]);
+
 //Route::get('mensaje', 'EjemploControlador@MostrarMensaje');
 
 Route::any('mensaje', [
   		'as' => 'Ejemplo/mostrarMensaje',
 		'uses' => 'EjemploController@mostrarMensajeAction'
 ]);
+
+
+
+Route::get('plantilla', [
+  		'as' => 'Ejemplo/mostrarPlantillaHola',
+		'uses' => 'EjemploController@mostrarPlantillaHolaAction'
+]);
+
+
 
 Route::get('nombre/{nombre}', [
 		'as' => 'Ejemplo/mostrarNombre',
